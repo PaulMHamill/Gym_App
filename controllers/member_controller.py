@@ -15,3 +15,20 @@ def show(id):
     member = member_repository.select(id)
     sessions = member_repository.session(member)
     return render_template("member/show.html", member=member, sessions=sessions)
+
+@members_blueprint.route("/member/new", methods=['GET'])
+def new_member():
+    members = member_repository.select_all()
+    return render_template("member/new.html", members = members)
+
+@members_blueprint.route("/member",  methods=['POST'])
+def create_member():
+    member_id = request.form['member_id']
+    member = member_repository.select(member_id)
+    member_repository.save(member)
+    return redirect('/member')
+
+@members_blueprint.route("/member/<id>/delete", methods=['POST'])
+def delete_member(id):
+    member_repository.delete(id)
+    return redirect('/member')
