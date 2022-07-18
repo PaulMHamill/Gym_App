@@ -36,7 +36,7 @@ def select(id):
 def session(member):
     sessions = []
 
-    sql = "SELECT session.* FROM session INNER JOIN visits ON member.session_id = session.id WHERE member_id = %s"
+    sql = "SELECT session.* FROM session INNER JOIN booking ON booking.session_id = session.id WHERE member_id = %s"
     values = [member.id]
     results = run_sql(sql, values)
 

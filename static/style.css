@@ -1,8 +1,9 @@
 body {
-    background: url('/static/images/background.jpg');
-    background-size: cover;
+    /* background: url('/static/images/background.jpg');
+    background-size: cover; */
+    background-color: grey;
     background-repeat: no-repeat;
-    color: #F6F4F3;
+    color: #545454;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     padding: 0px;
     margin: 0px;
@@ -21,12 +22,12 @@ body {
   }
   
   a, a:link, a:visited {
-    color: #0094C6;
+    color: #d2d2d2;
     text-decoration: none;
   }
   
   a:hover, a:active, a:focus {
-    color: #8EE3EF;
+    color: #ffffff;
   }
   
   nav {

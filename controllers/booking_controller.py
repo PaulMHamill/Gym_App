@@ -14,9 +14,9 @@ def bookings():
 
 @bookings_blueprint.route("/booking/new", methods=['GET'])
 def new_task():
-    member = member_repository.select_all()
-    session = session_repository.select_all()
-    return render_template("booking/new.html", member = member, session = session)
+    members = member_repository.select_all()
+    sessions = session_repository.select_all()
+    return render_template("booking/new.html", members = members, sessions = sessions)
 
 @bookings_blueprint.route("/booking",  methods=['POST'])
 def create_task():

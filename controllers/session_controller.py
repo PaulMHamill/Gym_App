@@ -13,5 +13,5 @@ def sessions():
 @sessions_blueprint.route("/session/<id>")
 def show(id):
     session = session_repository.select(id)
-    member = session_repository.member(session)
-    return render_template("session/show.html", session=session, member=member)
+    members = session_repository.member(session)
+    return render_template("session/show.html", session=session, members=members)
