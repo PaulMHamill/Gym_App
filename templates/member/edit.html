@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Editing Member: {{member.id}} {{member.name}}</h1>
+
+    <form action="/member/{{member.id}}/update" method="post">
+        <label for="member-name">Name</label>
+        <input type="text" name="name" id="name" value="name">
+
+        <button>Submit</button>
+    </form>
+{% endblock content %}

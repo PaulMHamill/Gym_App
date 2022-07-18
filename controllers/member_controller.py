@@ -28,7 +28,21 @@ def create_member():
     member_repository.save(member)
     return redirect('/member')
 
-@members_blueprint.route("/member/<id>/delete", methods=['POST'])
+@members_blueprint.route('/member/<id>/update')
+def edit(id):
+    member = member_repository.select(id)
+    return render_template('/member/edit.html', member=member)
+
+@members_blueprint.route('/member/<id>/update', methods=['POST'])
+def update(id):
+    name = request.form['name']
+    member = member_repository.select(id)
+    member.name = name
+    member_repository.update(member)
+
+    return redirect('/member')
+
+@members_blueprint.route('/member/<id>/delete', methods=['POST'])
 def delete_member(id):
     member_repository.delete(id)
     return redirect('/member')

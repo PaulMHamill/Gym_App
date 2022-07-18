@@ -31,7 +31,6 @@ def select(id):
         member = Member(result['name'], result['id'] )
     return member
 
-
 def session(member):
     sessions = []
 
@@ -44,6 +43,16 @@ def session(member):
         sessions.append(session)
 
     return sessions
+
+def update(member):
+    sql = "UPDATE member SET (name) = (%s) WHERE id = %s"
+    values = [member.name, member.id]
+    run_sql(sql, values)
+
+def delete(id):
+    sql = "DELETE FROM member WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM member"

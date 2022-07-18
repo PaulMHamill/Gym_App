@@ -15,6 +15,17 @@
   {% for member in members %}
   <tr>
     <td><a href="/member/{{ member.id }}"> {{member.name}} </a></td>
+    <td>
+        <form action="/member/{{ member.id }}/update">
+            <input type="submit" value="Edit member" />
+        </form>
+        </td>
+    <td>
+        <form class="delete-form" action="/member/{{member.id}}/delete" method="post">
+                    <button>Delete</button>
+                </form>
+    </td>
+
   </tr>
   {% endfor %}
 </table>
