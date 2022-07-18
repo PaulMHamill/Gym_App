@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bookings</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/booking/new">New booking</a>
+</p>
+
+<ul>
+  {% for booking in bookings %}
+  <li>
+  <p>{{ booking.member.name }} - {{ booking.session.name }} </p>
+    <p>
+      <form action="/booking/{{ booking.id }}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}
