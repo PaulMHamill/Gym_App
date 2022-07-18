@@ -22,8 +22,16 @@
     <td>{{ session.date }}</td>
     <td></td>
     <td>{{ session.time }}</td>
-    <td><button>Delete session</button></td>
-    <td><button>Edit session</button></td>
+    <td>
+        <form action="/session/{{ session.id }}/update">
+            <input type="submit" value="Edit" />
+        </form>
+        </td>
+    <td>
+        <form class="delete-form" action="/session/{{session.id}}/delete" method="post">
+                    <button>Delete</button>
+                </form>
+    </td>
   </tr>
   {% endfor %}
 </table>

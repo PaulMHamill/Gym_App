@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Editing Session: {{session.id}} {{session.name}}</h1>
+
+    <form action="/session/{{session.id}}/update" method="post">
+        <label for="session-name">Name</label>
+        <input type="text" name="name" id="name" value="name">
+
+        <button>Submit</button>
+    </form>
+{% endblock content %}
