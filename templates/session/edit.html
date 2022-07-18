@@ -5,7 +5,11 @@
 
     <form action="/session/{{session.id}}/update" method="post">
         <label for="session-name">Name</label>
-        <input type="text" name="name" id="name" value="name">
+        <input type="text" name="name" id="name" value={{session.name}}>
+        <label for="session-date">Date</label>
+        <input type="date" name="date" id="date" value="date">
+        <label for="session-time">Time</label>
+        <input type="time" name="time" id="time" value="time">
 
         <button>Submit</button>
     </form>
