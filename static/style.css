@@ -1,23 +1,31 @@
+body, html {
+        height: 100%;
+      }
 body {
-    /* background: url('/static/images/background.jpg');
-    background-size: cover; */
-    background-color: grey;
+    background: url('/static/images/gymbackground.jpeg');
+    height: 100%;
+    background-position: center;
     background-repeat: no-repeat;
-    color: #545454;
+    background-size: cover;
+    color: #f97474;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     padding: 0px;
     margin: 0px;
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1 {
+    font-family: 'Special Elite', cursive
+  }
+  
+  h2, h3, h4, h5, h6 {
     font-family: "Lucida Console", Monaco, monospace;
     margin: 0px;
     padding: 0px;
   }
   
   h1 {
-    font-size: 1.8em;
-    color: #E1DABD;
+    font-size: 3em;
+    color: #cecece;
     margin-bottom: 20px;
   }
   
@@ -60,6 +68,6 @@ body {
   }
   
   #content {
-    border-left: 1px solid #254E70;
+    border-left: 1px solid rgb(255, 255, 255);
     padding-left: 25px;
   }
