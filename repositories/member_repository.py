@@ -10,7 +10,6 @@ def save(member):
     member.id = results[0]['id']
     return member
 
-
 def select_all():
     members = []
 

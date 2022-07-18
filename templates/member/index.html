@@ -3,6 +3,10 @@
 {% block content %}
 <h1>Members</h1>
 
+<p class="btn--wrapper">
+    <a class="btn btn--action" href="/member/new">New member</a>
+  </p>
+
 <table>
   <tr>
     <th>Name</th>
@@ -15,7 +19,4 @@
   {% endfor %}
 </table>
 
-<p class="btn--wrapper">
-    <a class="btn btn--action" href="/member/new">New member</a>
-  </p>
 {% endblock %}

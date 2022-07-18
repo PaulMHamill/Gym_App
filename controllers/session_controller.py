@@ -15,3 +15,22 @@ def show(id):
     session = session_repository.select(id)
     members = session_repository.member(session)
     return render_template("session/show.html", session=session, members=members)
+
+@sessions_blueprint.route("/session/new", methods=['GET'])
+def new_session():
+    sessions = session_repository.select_all()
+    return render_template("session/new.html", sessions = sessions)
+
+@sessions_blueprint.route("/session",  methods=['POST'])
+def create_session():
+    name = request.form["name"]
+    date = request.form["date"]
+    time = request.form["time"]
+    session = Session(name, date, time)
+    session_repository.save(session)
+    return redirect('/session')
+
+@sessions_blueprint.route("/session/<id>/delete", methods=['POST'])
+def delete_member(id):
+    session_repository.delete(id)
+    return redirect('/session')
