@@ -23,7 +23,7 @@ member_repository.save(member3)
 session1 = Session('Box fit', '01/08/2022', '9:00')
 session_repository.save(session1)
 
-session2 = Session('Kick Bocking', '01/08/2022', '11:00')
+session2 = Session('Kick Boxing', '01/08/2022', '11:00')
 session_repository.save(session2)
 
 booking1 = Booking(member1, session1)

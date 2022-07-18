@@ -7,8 +7,8 @@ sessions_blueprint = Blueprint("session", __name__)
 
 @sessions_blueprint.route("/session")
 def sessions():
-    session = session_repository.select_all()
-    return render_template("session/index.html", session = session)
+    sessions = session_repository.select_all()
+    return render_template("session/index.html", sessions = sessions)
 
 @sessions_blueprint.route("/session/<id>")
 def show(id):

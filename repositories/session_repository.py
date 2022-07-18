@@ -33,7 +33,7 @@ def select(id):
     return session
 
 
-def members(session):
+def member(session):
     members = []
 
     sql = "SELECT member.* FROM member INNER JOIN booking ON booking.member_id = member.id WHERE session_id = %s"
