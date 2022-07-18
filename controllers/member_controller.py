@@ -16,7 +16,7 @@ def show(id):
     sessions = member_repository.session(member)
     return render_template("member/show.html", member=member, sessions=sessions)
 
-@members_blueprint.route("/member/new", methods=['GET'])
+@members_blueprint.route("/member/new")
 def new_member():
     members = member_repository.select_all()
     return render_template("member/new.html", members = members)

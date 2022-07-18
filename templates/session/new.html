@@ -3,13 +3,13 @@
 {% block content %}
     <h1>Create New Session!</h1>
 
-    <form action="/session/new" method="post">
+    <form action="/session" method="post">
       <label for="name">Name</label>
       <input type="text" name="name" id="name">
       <label for="date">Date</label>
       <input type="date" name="date" id="date">
       <label for="time">Time</label>
-      <input type="time" time="time" id="time">
+      <input type="time" name="time" id="time">
       <input type="submit" value="Add Session">
     </form>
 
