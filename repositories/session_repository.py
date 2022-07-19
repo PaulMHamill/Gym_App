@@ -14,7 +14,7 @@ def save(session):
 def select_all():
     sessions = []
 
-    sql = "SELECT * FROM session"
+    sql = "SELECT * FROM session ORDER BY date"
     results = run_sql(sql)
 
     for row in results:
