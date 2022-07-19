@@ -23,8 +23,10 @@ def new_member():
 
 @members_blueprint.route("/member",  methods=['POST'])
 def create_member():
-    name = request.form["name"]
-    member = Member(name)
+    name = request.form['name']
+    age = request.form['age']
+    address = request.form['address']
+    member = Member(name, age, address)
     member_repository.save(member)
     return redirect('/member')
 
@@ -36,8 +38,12 @@ def edit(id):
 @members_blueprint.route('/member/<id>/update', methods=['POST'])
 def update(id):
     name = request.form['name']
+    age = request.form['age']
+    address = request.form['address']
     member = member_repository.select(id)
     member.name = name
+    member.age = age
+    member.address = address
     member_repository.update(member)
 
     return redirect('/member')

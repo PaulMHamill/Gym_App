@@ -6,7 +6,10 @@
     <form action="/member/{{member.id}}/update" method="post">
         <label for="member-name">Name</label>
         <input type="text" name="name" id="name" value={{member.name}}>
-
-        <button>Submit</button>
+        <label for="member-age">Age</label>
+        <input type="number" name="age" id="age" value={{member.age}}>
+        <label for="member-address">Address</label>
+        <input type="text" name="address" id="address" value={{member.address}}>
+        <input type="submit" value="Submit" />
     </form>
 {% endblock content %}

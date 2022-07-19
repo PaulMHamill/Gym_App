@@ -11,13 +11,13 @@ booking_repository.delete_all()
 session_repository.delete_all()
 member_repository.delete_all()
 
-member1 = Member('Paul Hamill')
+member1 = Member('Paul Hamill', 33, '11 Lauriston Gardens, Edinbrugh')
 member_repository.save(member1)
 
-member2 = Member('Cheryl Stewart')
+member2 = Member('Cheryl Stewart', 31, '11 Lauriston Gardens, Edinburgh')
 member_repository.save(member2)
 
-member3 = Member('Tiger Woods')
+member3 = Member('Tiger Woods', 50, '123 Fake Street')
 member_repository.save(member3)
 
 session1 = Session('Box fit', '01/08/2022', '9:00')

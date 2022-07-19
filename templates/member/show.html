@@ -2,8 +2,10 @@
 
 {% block content %}
 <h1> {{member.name}} </h1>
+<h4> Age:  {{member.age}} </h4>
+<h4> Address:  {{member.address}} </h4>
 
-<h3>Booked:</h3>
+<h2>Booked:</h2>
 
 <ul>
     {% for session in sessions  %}
