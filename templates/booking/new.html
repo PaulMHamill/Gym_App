@@ -14,7 +14,7 @@
   <label for="session">Select a session:</label>
     <select name="session_id" id="session">
       {% for session in sessions %}
-      <option value="{{ session.id }}">{{ session.name }}</option>
+      <option value="{{ session.id }}">{{ session.name }}, {{ session.date }}, {{ session.time }}</option>
       {% endfor %}
     </select>
   <input class="btn btn--action" type='submit' value="Submit">

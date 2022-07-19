@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Editing Session: {{session.id}} {{session.name}}</h1>
+    <h1>Editing Session: {{session.id}}; {{session.name}}</h1>
 
     <form action="/session/{{session.id}}/update" method="post">
         <label for="session-name">Name</label>
         <input type="text" name="name" id="name" value={{session.name}}>
         <label for="session-date">Date</label>
-        <input type="date" name="date" id="date" value="date">
+        <input type="date" name="date" id="date" value={{session.date}}>
         <label for="session-time">Time</label>
-        <input type="time" name="time" id="time" value="time">
+        <input type="time" name="time" id="time" value={{session.time}}>
 
         <button>Submit</button>
     </form>

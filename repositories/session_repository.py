@@ -41,7 +41,7 @@ def member(session):
     results = run_sql(sql, values)
 
     for row in results:
-        member = Member(row['name'], row['id'])
+        member = Member(row['name'], row['age'], row['address'], row['id'])
         members.append(member)
 
     return members

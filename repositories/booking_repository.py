@@ -40,7 +40,7 @@ def member(booking):
     sql = "SELECT * FROM member WHERE id = %s"
     values = [booking.member.id]
     results = run_sql(sql, values)[0]
-    member = Member(results['name'], results['id'])
+    member = Member(results['name'], results['age'], results['address'], results['id'])
     return member
 
 

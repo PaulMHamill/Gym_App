@@ -23,9 +23,9 @@ def new_session():
 
 @sessions_blueprint.route("/session",  methods=['POST'])
 def create_session():
-    name = request.form["name"]
-    date = request.form["date"]
-    time = request.form["time"]
+    name = request.form['name']
+    date = request.form['date']
+    time = request.form['time']
     session = Session(name, date, time)
     session_repository.save(session)
     return redirect('/session')
