@@ -14,10 +14,10 @@ body {
   }
   
   h1 {
-    font-family: 'Special Elite', cursive
+    font-family: 'Special Elite', cursive;
   }
   
-  h2, h3, h4, h5, h6 {
+  h3, h4, h5, h6 {
     font-family: "Lucida Console", Monaco, monospace;
     margin: 0px;
     padding: 0px;
@@ -28,6 +28,12 @@ body {
     color: #cecece;
     margin-bottom: 20px;
   }
+
+  h2 {
+    font-family: 'Special Elite', cursive;
+  }
+
+
   
   a, a:link, a:visited {
     color: #d2d2d2;
