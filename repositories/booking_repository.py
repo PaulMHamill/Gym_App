@@ -32,7 +32,7 @@ def session(booking):
     sql = "SELECT * FROM session WHERE id = %s"
     values = [booking.session.id]
     results = run_sql(sql, values)[0]
-    session = Session(results['name'], results['date'], results['time'], results['id'])
+    session = Session(results['name'], results['date'], results['time'], results['capacity'], results['id'])
     return session
 
 
@@ -52,3 +52,9 @@ def delete(id):
     sql = "DELETE FROM booking WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def count_bookings(session):
+    sql = "SELECT COUNT(member_id) FROM booking WHERE session_id = %s"
+    values = [session]
+    results = run_sql(sql, values)
+    return results

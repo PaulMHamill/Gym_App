@@ -4,8 +4,8 @@ from models.member import Member
 from models.session import Session
 
 def save(session):
-    sql = "INSERT INTO session(name, date, time) VALUES ( %s, %s, %s ) RETURNING id"
-    values = [session.name, session.date, session.time]
+    sql = "INSERT INTO session(name, date, time, capacity) VALUES ( %s, %s, %s, %s ) RETURNING id"
+    values = [session.name, session.date, session.time, session.capacity]
     results = run_sql( sql, values )
     session.id = results[0]['id']
     return session
@@ -18,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        session = Session(row['name'], row['date'], row['time'], row['id'])
+        session = Session(row['name'], row['date'], row['time'], row['capacity'], row['id'])
         sessions.append(session)
     return sessions
 
@@ -29,7 +29,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        session = Session(result['name'], result['date'], result['time'], result['id'] )
+        session = Session(result['name'], result['date'], result['time'], result['capacity'], result['id'] )
     return session
 
 
@@ -47,9 +47,16 @@ def member(session):
     return members
 
 def update(session):
-    sql = "UPDATE session SET (name, date, time) = (%s, %s, %s) WHERE id = %s"
-    values = [session.name, session.date, session.time, session.id]
+    sql = "UPDATE session SET (name, date, time, capacity) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [session.name, session.date, session.time, session.capacity, session.id]
     run_sql(sql, values)
+
+def get_capacity(session):
+    sql = "SELECT capacity FROM session WHERE id = %s"
+    values = [session]
+    results = run_sql(sql, values)
+    return results 
+
 
 def delete(id):
     sql = "DELETE FROM session WHERE id = %s"

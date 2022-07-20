@@ -26,7 +26,8 @@ def create_session():
     name = request.form['name']
     date = request.form['date']
     time = request.form['time']
-    session = Session(name, date, time)
+    capacity = request.form['capacity']
+    session = Session(name, date, time, capacity)
     session_repository.save(session)
     return redirect('/session')
 
@@ -42,11 +43,13 @@ def update(id):
     name = request.form['name']
     date = request.form['date']
     time = request.form['time']
+    capacity = request.form['capacity']
     
     session = session_repository.select(id)
     session.name = name
     session.date = date
     session.time = time
+    session.capacity = capacity
 
     session_repository.update(session)
 

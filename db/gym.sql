@@ -5,7 +5,7 @@ DROP TABLE session;
 CREATE TABLE member (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  age VARCHAR(255),
+  age INT,
   address VARCHAR(255)
 );
 
@@ -13,7 +13,8 @@ CREATE TABLE session (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   date DATE,
-  time TIME
+  time TIME,
+  capacity INT
 );
 
 CREATE TABLE booking (

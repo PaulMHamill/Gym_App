@@ -24,8 +24,13 @@ def create_task():
     session_id = request.form['session_id']
     member = member_repository.select(member_id)
     session = session_repository.select(session_id)
+    capacity = session_repository.get_capacity(session_id)
+    bookings = booking_repository.count_bookings(session_id)
     booking = Booking(member, session)
-    booking_repository.save(booking)
+    if bookings >= capacity:
+        return render_template("/booking/error.html")
+    else:
+        booking_repository.save(booking)
     return redirect('/booking')
 
 @bookings_blueprint.route("/booking/<id>/delete", methods=['POST'])

@@ -20,10 +20,10 @@ member_repository.save(member2)
 member3 = Member('Tiger Woods', 50, '123 Fake Street')
 member_repository.save(member3)
 
-session1 = Session('Box fit', '01/08/2022', '9:00')
+session1 = Session('Box fit', '01/08/2022', '9:00', 2)
 session_repository.save(session1)
 
-session2 = Session('Kick Boxing', '01/08/2022', '11:00')
+session2 = Session('Kick Boxing', '01/08/2022', '11:00', 2)
 session_repository.save(session2)
 
 booking1 = Booking(member1, session1)
@@ -38,4 +38,6 @@ booking_repository.save(booking3)
 booking4 = Booking(member2, session2)
 booking_repository.save(booking4)
 
-pdb.set_trace()
+
+
+# pdb.set_trace()
