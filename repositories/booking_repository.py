@@ -1,3 +1,4 @@
+import sqlite3
 from db.run_sql import run_sql
 
 from models.booking import Booking
@@ -13,6 +14,17 @@ def save(booking):
     booking.id = results[0]['id']
     return booking
 
+# DEFINE select all as function
+# SET bookings = empty list
+# SELECT all from booking
+# SET results = run_sql function
+# FOR i = results
+#   SELECT member id
+#   SELECT session id
+#   SET booking = Booking(member id, session id)
+#   APPEND booking TO bookings
+# RETURN bookings
+# END
 
 def select_all():
     bookings = []
